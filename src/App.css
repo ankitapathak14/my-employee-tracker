@@ -1,0 +1,482 @@
+/* header file */
+
+.header {
+  display: flex;
+  align-items: center;          /* vertical centering */
+  justify-content: space-between; /* spread items across row */
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+/* Hamburger inside header */
+.sidebar-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 25px;
+  color: white;   /* matches header */
+  margin-right: 10px;
+}
+.logo {
+  margin-left: auto; 
+}
+
+.logo .logo-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0; 
+}
+
+.title {
+  flex: 1;
+  text-align: center; 
+}
+
+.title h1 {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.title p {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* ================================= */
+
+/* Footer */
+.footer {
+  text-align: center;
+  background-color: #f3f4f6;
+  color: #181a1d;
+  font-size: 10px;
+}
+/* ================================== */
+
+/* Employee Card */
+
+.employee-card {
+  width: 90%;
+  max-width: 420px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.employee-card h2 {
+  margin-bottom: 15px;
+  color: #2563eb;
+  font-size: 22px;
+}
+
+.employee-info p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+/* =================================*/
+
+/* Logout Page */
+.logout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.logout-card {
+  width: 30%;
+  max-width: 420px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;              
+  flex-direction: column;     
+  align-items: center;   
+  gap: 20px;
+}
+.logout-card p {
+  margin: 10px 0;
+  font-size: 20px;
+  text-align: center; 
+  color: #333;
+}
+
+.logout-button {
+
+  padding: 10px 20px;
+  background-color: #ca354ee8;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  
+}
+.logout-button:hover {
+  background-color: #1d4ed8;
+}
+/* ================================= */
+/* Status Card */
+
+.status-card {
+  width: 90%;
+  max-width: 420px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.status-card h2 {
+  color: #2563eb;
+  margin-bottom: 15px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  background-color: red;
+  border-radius: 50%;
+}
+/* ================================= */
+
+/* Attendance Buttons */
+
+.attendance-buttons {
+  width: 90%;
+  max-width: 420px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+}
+
+.checkin-btn,
+.checkout-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.checkin-btn {
+  background-color: #22c55e;
+  color: white;
+}
+
+.checkin-btn:hover {
+  background-color: #16a34a;
+}
+
+.checkout-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+.checkout-btn:hover {
+  background-color: #dc2626;
+}
+
+/* ================================ */
+
+/* Attendance Card */
+
+.attendance-card {
+  width: 90%;
+  max-width: 420px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.attendance-card h2 {
+  color: #2563eb;
+  margin-bottom: 15px;
+}
+
+.attendance-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 16px;
+}
+
+.attendance-row:last-child {
+  border-bottom: none;
+}
+
+.attendance-row span:last-child {
+  font-weight: bold;
+}
+/* ================================= */
+/* App css main */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-layout {
+  display: flex;
+  flex: 1;
+}
+
+.page-content {
+  flex: 1;
+  padding: 20px;
+  /* background-color: #f9fafb; */
+}
+
+/* ============================ */
+/* Dashboard */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  background-color: #f9fafb;
+  min-height: 100vh;
+}
+
+.dashboard h1 {
+  color: #2563eb;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.dashboard p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.dashboard-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+.dashboard-card h2 {
+  font-size: 20px;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.dashboard-card p {
+  font-size: 14px;
+  color: #555;
+}
+/* ====== old dashboard css ========= */
+/* .dashboard {         
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+} */
+/* ============================ */
+
+/* History page  */
+
+.history-card {
+  width: 90%;
+  max-width: 420px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.history h1 {
+  margin-top: 20px;     /* space from the top */
+   font-size: 2rem;      /* optional: make it bigger */
+   font-weight: bold; 
+ }  
+
+.history,.profile{  /*using this like to center align all the text in the containers history and profile  */
+  text-align: center;
+}
+.history-card h2 {
+  color: #2563eb;
+  margin-bottom: 15px;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.history-table th {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.history-table td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.history-table tr:hover {
+  background-color: #f5f5f5;
+}
+/* =============================== */
+/* Sidebar toggle button */
+.sidebar-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  background: none;       
+  border: none;           
+  padding: 0;            
+  cursor: pointer;
+  font-size: 25px;       
+  color: black;          
+  transition: color 0.3s ease;
+}
+/* When sidebar is open, push toggle button to the edge */
+.sidebar-container.open ~ .sidebar-toggle {
+  left: 220px; /* sidebar width (200px) + margin */
+}
+/* Hide hamburger when sidebar is open */
+.sidebar-container.open ~ .sidebar-toggle {
+  display: none;
+}
+/* ======================================= */
+/* Login page */
+
+.login-card p {
+  margin: 10px 0;
+  font-size: 20px;
+  text-align: center; 
+  color: #333;
+}
+
+
+/* Login Page Polished */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+}
+
+.login-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-card h2 {
+  margin-bottom: 20px;
+  color: #2563eb;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* ======================================= */
+/* QR code styling */
+
+.qr-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* ======================================= */
+
+/* responsive */
+@media (max-width: 768px) {
+  .employee-card, .status-card, .attendance-card, .history-card, .logout-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 10px auto;
+  }
+  .attendance-buttons {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+  .checkin-btn, .checkout-btn, .logout-button {
+    width: 100%;
+    font-size: 16px;
+  }
+}
