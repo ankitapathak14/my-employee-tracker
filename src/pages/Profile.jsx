@@ -6,8 +6,8 @@ function Profile({ employeeId }) {
   //const appUrl = "http://10.11.84.145:5173/login"; // ✅ QR always points to login
  
   //const appUrl = "https://192.168.0.194:5173//login"; // ✅ QR always points to login
-
-  const appUrl = "https://my-employee-tracker-delta.vercel.app//login"; // ✅ QR always points to login
+ 
+  const appUrl = "https://my-employee-tracker-delta.vercel.app/login"; // ✅ QR always points to login
 
   // ✅ Guard: if no employeeId, redirect to login
   if (!employeeId) {
