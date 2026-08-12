@@ -15,7 +15,7 @@ function Header({ setIsSidebarOpen, isSidebarOpen }) {
 
       {/* Title in the center */}
       <div className="title">
-        <h1>Employee Attendance</h1>
+        <h1><strong>EMPLOYEE ATTENDANCE</strong></h1>
         <p>Attendance Tracking System</p>
       </div>
 

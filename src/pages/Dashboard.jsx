@@ -3,6 +3,7 @@ import EmployeeCard from "../components/EmployeeCard.jsx";
 import StatusCard from "../components/StatusCard.jsx";
 import AttendanceButtons from "../components/AttendanceButtons.jsx";
 import AttendanceCard from "../components/AttendanceCard.jsx";
+import DashboardCard from "../components/DashboardCard.jsx";
 
 function Dashboard() {
   const [status, setStatus] = useState("Not Checked In");
