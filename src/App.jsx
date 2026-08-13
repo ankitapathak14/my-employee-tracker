@@ -10,6 +10,7 @@ import Logout from "./pages/Logout.jsx";
 import Profile from "./pages/Profile.jsx";
 import Login from "./pages/Login.jsx";
 import Footer from "./components/Footer.jsx";
+import AdminAnalytics from "./pages/AdminAnalytics.jsx";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -83,6 +84,10 @@ function App() {
               element={isLoggedIn ? <History employeeId={employeeId} /> : <Navigate to="/login" />} 
             />
             <Route 
+              path="/analytics" 
+              element={isLoggedIn && role === "Admin" ? <AdminAnalytics /> : <Navigate to="/login" />} 
+            />
+            <Route 
               path="/profile" 
               element={isLoggedIn ? <Profile employeeId={employeeId} /> : <Navigate to="/login" />} 
             />
@@ -90,6 +95,7 @@ function App() {
               path="/logout" 
               element={isLoggedIn ? <Logout setIsLoggedIn={setIsLoggedIn} setEmployeeId={setEmployeeId} /> : <Navigate to="/login" />} 
             />
+
           </Routes>
         </div>
       </div>

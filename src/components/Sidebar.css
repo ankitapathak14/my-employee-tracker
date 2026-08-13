@@ -28,17 +28,6 @@
   font-weight: bold;
 }
 
-.sidebar a {
-  display: block;
-  margin: 8px 0;
-  text-decoration: none;
-  color: purple;
-  font-weight: bold;
-}
-
-.sidebar a:hover {
-  color: darkviolet;
-}
 .sidebar-header {
   display: flex;
   justify-content: space-between;
@@ -53,4 +42,24 @@
   font-size: 20px;
   padding: 0;
   cursor: pointer;
+}
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between icon and text */
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.sidebar a:hover {
+  background-color: hsl(0, 0%, 99%);
+  border-radius: 8px;
+}
+
+.sidebar-icon {
+  width: 20px;
+  height: 20px;
+  color: #2563eb; /* match your theme */
 }

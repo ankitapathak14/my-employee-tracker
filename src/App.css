@@ -460,6 +460,7 @@ button:hover, .login-button:hover, .checkin-btn:hover, .checkout-btn:hover, .log
 .sidebar-container.open ~ .sidebar-toggle {
   display: none;
 }
+
 /* ======================================= */
 /* Login page */
 
