@@ -5,27 +5,37 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from "recharts";
 
-// Helper: calculate total working hours per employee
+// Parse "09:10 AM" into Date
+function parseTime(timeStr) {
+  if (!timeStr) return null;
+  const [time, modifier] = timeStr.split(" ");
+  let [hours, minutes] = time.split(":").map(Number);
+  if (modifier === "PM" && hours < 12) hours += 12;
+  if (modifier === "AM" && hours === 12) hours = 0;
+  const date = new Date();
+  date.setHours(hours, minutes, 0, 0);
+  return date;
+}
+
+// Calculate total working hours
 function calculateHours(records) {
   return records.reduce((total, r) => {
-    const [inH, inM] = r.checkIn.split(":");
-    const [outH, outM] = r.checkOut.split(":");
-    const inTime = new Date(`1970-01-01T${inH}:${inM}:00`);
-    const outTime = new Date(`1970-01-01T${outH}:${outM}:00`);
-    const diff = (outTime - inTime) / (1000 * 60 * 60); // hours
+    const inTime = parseTime(r.checkIn);
+    const outTime = parseTime(r.checkOut);
+    if (!inTime || !outTime) return total;
+    const diff = (outTime - inTime) / (1000 * 60 * 60);
     return total + diff;
   }, 0);
 }
 
 function AdminAnalytics() {
-  // Prepare chart data
   const data = Object.keys(dummyEmployees).map((id) => {
     const profile = dummyProfiles[id];
     const records = dummyEmployees[id] || [];
     return {
       name: profile.name,
       department: profile.department,
-      totalHours: calculateHours(records).toFixed(1),
+      totalHours: parseFloat(calculateHours(records).toFixed(1)),
       daysPresent: records.length
     };
   });
@@ -39,11 +49,23 @@ function AdminAnalytics() {
         <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
+
+          {/* ✅ Two separate Y axes */}
+          <YAxis yAxisId="left" label={{ value: "Hours", angle: -90, position: "insideLeft" }} />
+          <YAxis yAxisId="right" orientation="right" label={{ value: "Days", angle: -90, position: "insideRight" }} />
+
+          <Tooltip
+            formatter={(value, name) => {
+              if (name === "Total Hours Worked") return `${value} hrs`;
+              if (name === "Days Present") return `${value} days`;
+              return value;
+            }}
+          />
           <Legend />
-          <Bar dataKey="totalHours" fill="#2563eb" name="Total Hours Worked" />
-          <Bar dataKey="daysPresent" fill="#22c55e" name="Days Present" />
+
+          {/* ✅ Assign bars to different axes */}
+          <Bar yAxisId="left" dataKey="totalHours" fill="#2563eb" name="Total Hours Worked" />
+          <Bar yAxisId="right" dataKey="daysPresent" fill="#22c55e" name="Days Present" />
         </BarChart>
       </ResponsiveContainer>
     </div>
