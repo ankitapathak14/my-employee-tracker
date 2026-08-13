@@ -106,6 +106,10 @@
   align-items: center;   
   gap: 20px;
 }
+.logout h1{
+  text-align: center;
+  color: #000;
+}
 .logout-card p {
   margin: 10px 0;
   font-size: 20px;
@@ -125,6 +129,32 @@
   cursor: pointer;
   transition: 0.3s;
   
+}
+.logout-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+.logout-button {
+  flex: 1;
+}
+
+.cancel-button {
+  flex: 1;
+}
+
+.cancel-button{
+  padding: 10px 20px;
+  background-color: rgb(204, 201, 201);
+  color:rgb(0, 0, 0);
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
 }
 .logout-button:hover {
   background-color: #1d4ed8;
@@ -329,6 +359,25 @@ button:hover, .login-button:hover, .checkin-btn:hover, .checkout-btn:hover, .log
   font-size: 14px;
   color: #555;
 }
+.admindashboard{
+  text-align: center;
+}
+.admindashboard h1{
+  margin-top: 20px;     /* space from the top */
+   font-size: 2rem;      /* optional: make it bigger */
+   font-weight: bold;
+   color: #000;
+}
+.employee-section{
+  text-align: auto;
+  width: 90%;
+  max-width: 420px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 /* ====== old dashboard css ========= */
 /* .dashboard {         
   display: flex;
@@ -354,7 +403,8 @@ button:hover, .login-button:hover, .checkin-btn:hover, .checkout-btn:hover, .log
 .history h1 {
   margin-top: 20px;     /* space from the top */
    font-size: 2rem;      /* optional: make it bigger */
-   font-weight: bold; 
+   font-weight: bold;
+   color: #000; 
  }  
 
 .history,.profile{  /*using this like to center align all the text in the containers history and profile  */
@@ -427,7 +477,7 @@ button:hover, .login-button:hover, .checkin-btn:hover, .checkout-btn:hover, .log
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+  background: linear-gradient(135deg, hsla(221, 93%, 71%, 0.751), #1e3a8a);
 }
 
 .login-card {
@@ -471,6 +521,44 @@ button:hover, .login-button:hover, .checkin-btn:hover, .checkout-btn:hover, .log
 
 .login-button:hover {
   background-color: #1d4ed8;
+}
+/* Role Selection */
+.role-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.role-selection button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.role-selection button:hover {
+  background-color: #1d4ed8;
+}
+.back-button{
+  margin-top: 5%;
+  width: 80%;
+  padding: 10px;
+  background-color: #c9ccd3ee;
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+
 }
 
 /* ======================================= */
@@ -524,3 +612,4 @@ button:hover, .login-button:hover, .checkin-btn:hover, .checkout-btn:hover, .log
     align-items: center;
   }
 }
+

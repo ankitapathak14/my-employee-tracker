@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import Header from "./components/Header.jsx";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Sidebar from "./components/Sidebar.jsx";
-import Dashboard from "./pages/Dashboard.jsx";
+import EmployeeDashboard from "./pages/Dashboard.jsx";
+import AdminDashboard from "./pages/AdminDashboard.jsx";
 import History from "./pages/History.jsx";
 import Logout from "./pages/Logout.jsx";
 import Profile from "./pages/Profile.jsx";
@@ -13,20 +14,16 @@ import Footer from "./components/Footer.jsx";
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  // ✅ Restore login state from localStorage
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
     return localStorage.getItem("isLoggedIn") === "true";
   });
 
-  // ✅ Restore employeeId from localStorage
   const [employeeId, setEmployeeId] = useState(() => {
     return localStorage.getItem("employeeId") || null;
   });
 
-  // ✅ Keep localStorage in sync + force logout if employeeId missing
   useEffect(() => {
     if (isLoggedIn && !employeeId) {
-      // 🚨 NEW FIX: if logged in but employeeId is null, force logout
       setIsLoggedIn(false);
       localStorage.removeItem("isLoggedIn");
     }
@@ -38,6 +35,8 @@ function App() {
       localStorage.removeItem("employeeId");
     }
   }, [isLoggedIn, employeeId]);
+
+  const role = localStorage.getItem("role");
 
   return (
     <div className="app-layout">
@@ -57,21 +56,27 @@ function App() {
 
         <div className="page-content">
           <Routes>
-            {/* ✅ Root route: login if not logged in */}
             <Route
               path="/"
               element={
                 isLoggedIn 
-                  ? <Dashboard employeeId={employeeId} /> 
+                  ? role === "Admin" 
+                    ? <AdminDashboard /> 
+                    : <EmployeeDashboard employeeId={employeeId} /> 
                   : <Login setIsLoggedIn={setIsLoggedIn} setEmployeeId={setEmployeeId} />
               }
             />
             <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} setEmployeeId={setEmployeeId} />} />
             
-            {/* ✅ Protect all routes */}
             <Route 
               path="/dashboard" 
-              element={isLoggedIn ? <Dashboard employeeId={employeeId} /> : <Navigate to="/login" />} 
+              element={
+                isLoggedIn 
+                  ? role === "Admin" 
+                    ? <AdminDashboard /> 
+                    : <EmployeeDashboard employeeId={employeeId} /> 
+                  : <Navigate to="/login" />
+              } 
             />
             <Route 
               path="/history" 

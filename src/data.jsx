@@ -1,4 +1,3 @@
-// data.jsx
 export const dummyEmployees = {
   E001: [
     { date: "2026-08-05", checkIn: "09:10 AM", checkOut: "05:00 PM" },
@@ -15,7 +14,8 @@ export const dummyEmployees = {
 };
 
 export const dummyProfiles = {
-  E001: { name: "Ankita Pathak", role: "Software Engineer", department: "IT", password: "passAnkita" },
-  E002: { name: "Rahul Sharma", role: "Frontend Developer", department: "IT", password: "passRahul" },
-  E003: { name: "Sneha Das", role: "Data Analyst", department: "Analytics", password: "passSneha" }
+  E001: { name: "Ankita Pathak", role: "Employee", department: "IT", password: "passAnkita" },
+  E002: { name: "Rahul Sharma", role: "Employee", department: "IT", password: "passRahul" },
+  E003: { name: "Sneha Das", role: "Employee", department: "Analytics", password: "passSneha" },
+  A001: { name: "Admin User", role: "Admin", department: "Management", password: "admin123" }
 };
