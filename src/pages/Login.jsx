@@ -49,7 +49,7 @@ function Login({ setIsLoggedIn, setEmployeeId }) {
               </div>
 
               <button className="login-button" type="submit">Login</button>
-              <button className="back-button" onClick={() => setSelectedRole(null)}>Back</button>
+              <button className="back-button" onClick={() => navigate("/")}>Back</button>
             </form>
           </>
       </div>

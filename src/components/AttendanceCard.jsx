@@ -4,7 +4,7 @@ function formatTime(date) {
     : "--:--";
 }
 
-function calculateWorkingHours(checkIn, checkOut) {
+function calculateWorkingHours(checkIn, checkOut,) {
   if (!checkIn || !checkOut) return "----";
   const diffMs = checkOut - checkIn; // difference in ms
   const diffSec = Math.floor(diffMs / 1000);
@@ -14,7 +14,7 @@ function calculateWorkingHours(checkIn, checkOut) {
   return `${hrs}h ${mins}m ${secs}s`;
 }
 
-function AttendanceCard({ checkInTime, checkOutTime }) {
+function AttendanceCard({ checkInTime, checkOutTime,location }) {
   return (
     <div className="attendance-card">
       <h2>Today's Attendance</h2>
@@ -29,6 +29,10 @@ function AttendanceCard({ checkInTime, checkOutTime }) {
       <div className="attendance-row">
         <span>Working Hours:</span>
         <span>{calculateWorkingHours(checkInTime, checkOutTime)}</span>
+      </div>
+      <div className="attendance-row">
+        <span>Location:</span>
+        <span>{location || "--"}</span>
       </div>
     </div>
   );

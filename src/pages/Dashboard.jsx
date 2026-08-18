@@ -9,11 +9,28 @@ function EmployeeDashboard({ employeeId }) {
   const [status, setStatus] = useState("Not Checked In");
   const [checkInTime, setCheckInTime] = useState(null);
   const [checkOutTime, setCheckOutTime] = useState(null);
+  const [location,setLocation] = useState(null); //New addition for adding location
 
   const handleCheckIn = () => {
     const now = new Date();
     setStatus("Checked In");
     setCheckInTime(now);
+
+    //getting geolocation
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition((pos)=>{
+        const { latitude, longitude } = pos.coords;
+        setLocation(`Lat: ${latitude.toFixed(4)}, Lng: ${longitude.toFixed(4)}`);
+
+      },
+      (err)=>{console.error(err);
+        setLocation("Location unavailable");
+      }
+     );
+    }
+    else{
+      setLocation("Geolocation not supported");
+    }
   };
 
   const handleCheckOut = () => {
@@ -30,7 +47,8 @@ function EmployeeDashboard({ employeeId }) {
 
       <StatusCard status={status} />
       <AttendanceButtons onCheckIn={handleCheckIn} onCheckOut={handleCheckOut} />
-      <AttendanceCard checkInTime={checkInTime} checkOutTime={checkOutTime} />
+      <AttendanceCard checkInTime={checkInTime} checkOutTime={checkOutTime} 
+      location={location}/>
 
     </div>
   );
