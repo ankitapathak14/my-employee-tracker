@@ -16,6 +16,6 @@ export const dummyEmployees = {
 export const dummyProfiles = {
   E001: { name: "Ankita Pathak", role: "Employee", department: "IT", password: "passAnkita" },
   E002: { name: "Rahul Sharma", role: "Employee", department: "IT", password: "passRahul" },
-  E003: { name: "Sneha Das", role: "Employee", department: "Analytics", password: "passSneha" },
-  A001: { name: "Admin User", role: "Admin", department: "Management", password: "admin123" }
+  E003: { name: "Sneha Das", role: "Employee", department: "Analytics", password: "passSneha" }
+  
 };

@@ -460,7 +460,6 @@ button:hover, .login-button:hover, .checkin-btn:hover, .checkout-btn:hover, .log
 .sidebar-container.open ~ .sidebar-toggle {
   display: none;
 }
-
 /* ======================================= */
 /* Login page */
 
@@ -478,7 +477,7 @@ button:hover, .login-button:hover, .checkin-btn:hover, .checkout-btn:hover, .log
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, hsla(221, 93%, 71%, 0.751), #1e3a8a);
+  background: linear-gradient(135deg, hsla(221, 69%, 62%, 0.364), #1e3a8a);
 }
 
 .login-card {

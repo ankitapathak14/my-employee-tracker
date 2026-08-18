@@ -4,13 +4,11 @@ import Header from "./components/Header.jsx";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Sidebar from "./components/Sidebar.jsx";
 import EmployeeDashboard from "./pages/Dashboard.jsx";
-import AdminDashboard from "./pages/AdminDashboard.jsx";
 import History from "./pages/History.jsx";
 import Logout from "./pages/Logout.jsx";
 import Profile from "./pages/Profile.jsx";
 import Login from "./pages/Login.jsx";
 import Footer from "./components/Footer.jsx";
-import AdminAnalytics from "./pages/AdminAnalytics.jsx";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);

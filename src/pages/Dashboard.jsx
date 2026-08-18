@@ -26,21 +26,12 @@ function EmployeeDashboard({ employeeId }) {
 
   return (
     <div className="dashboard">
-      <h1>Employee Dashboard</h1>
-      {/* <EmployeeCard employeeId={employeeId} /> */}
+      <h1>Dashboard</h1>
 
       <StatusCard status={status} />
       <AttendanceButtons onCheckIn={handleCheckIn} onCheckOut={handleCheckOut} />
       <AttendanceCard checkInTime={checkInTime} checkOutTime={checkOutTime} />
 
-      {/* <h2>Attendance History</h2>
-      <ul>
-        {records.map((r, i) => (
-          <li key={i}>
-            {r.date} - In: {r.checkIn}, Out: {r.checkOut}
-          </li>
-        ))}
-      </ul> */}
     </div>
   );
 }
